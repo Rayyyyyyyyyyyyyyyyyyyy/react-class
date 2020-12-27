@@ -13,8 +13,14 @@ import Login from './pages/Login'
 // withRouter 高階元件樣式(HOC) 範例
 import ProductBaby from './pages/ProductBaby'
 import ProductMen from './pages/ProductMen'
+import ProductWomen from './pages/ProductWomen'
+
+import NotFoundPage from './pages/NotFoundPage'
+
+import ScrollToTop from './components/1225/ScrollToTop'
 
 function App() {
+  // 會員認証範例
   const [isAuth, setIsAuth] = useState(false)
 
   return (
@@ -25,25 +31,34 @@ function App() {
         {/* 主內容區 */}
         <MainContent>
           {/* 以下為匹配路徑對用頁面用的路由列表 */}
-          <Switch>
-            <Route path="/about">
-              <About isAuth={isAuth} />
-            </Route>
-            <Route path="/login">
-              <Login isAuth={isAuth} setIsAuth={setIsAuth} />
-            </Route>
-            {/* `:id?`是網址上的參數列 */}
-            <Route path="/product/baby/:id?">
-              <ProductBaby isAuth={isAuth} />
-            </Route>
-            <Route path="/product/men">
-              <ProductMen />
-            </Route>
+          <ScrollToTop>
+            <Switch>
+              <Route path="/about">
+                <About isAuth={isAuth} />
+              </Route>
+              <Route path="/login">
+                <Login isAuth={isAuth} setIsAuth={setIsAuth} />
+              </Route>
+              {/* `:id?`是網址上的參數列 */}
+              <Route path="/product/baby/:id?">
+                <ProductBaby isAuth={isAuth} />
+              </Route>
+              <Route path="/product/men">
+                <ProductMen />
+              </Route>
+              <Route path="/product/women">
+                <ProductWomen isAuth={isAuth} />
+              </Route>
 
-            <Route exact path="/">
-              <Home isAuth={isAuth} />
-            </Route>
-          </Switch>
+              <Route exact path="/">
+                <Home isAuth={isAuth} />
+              </Route>
+
+              <Route path="*">
+                <NotFoundPage />
+              </Route>
+            </Switch>
+          </ScrollToTop>
           {/* end 路由表 */}
         </MainContent>
         {/* 頁尾 */}

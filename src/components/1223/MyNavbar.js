@@ -7,7 +7,9 @@ import {
   Button,
   NavDropdown,
 } from 'react-bootstrap'
+
 import { NavLink } from 'react-router-dom'
+
 function MyNavbar(props) {
   return (
     <>
@@ -18,22 +20,29 @@ function MyNavbar(props) {
         variant="dark"
         fixed="top"
       >
-        <Navbar.Brand href="#home">goShopping</Navbar.Brand>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link as={NavLink} to="/" exact={true}>
+            <Nav.Link as={NavLink} to="/" exact>
               首頁
             </Nav.Link>
             <Nav.Link as={NavLink} to="/about">
               關於我們
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/login">
+              會員登入
+            </Nav.Link>
             <NavDropdown title="產品分類" id="collasible-nav-dropdown">
               <NavDropdown.Item as={NavLink} to="/product/men">
-                Men 男性
+                MEN 男性
               </NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/product/baby">
                 Baby 嬰兒
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={NavLink} to="/product/women">
+                WOMEN 女性
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
