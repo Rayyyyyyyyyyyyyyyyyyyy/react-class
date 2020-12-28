@@ -205,7 +205,7 @@ body {
 
 > 在`src/styles`目錄
 
-```scss
+````scss
 // 變數覆蓋需要在導入Bootstrap的Sass檔案之前
 // 參考Bootstrap的 _variables.scss
 $primary: rgb(148, 36, 240);
@@ -220,4 +220,10 @@ $secondary: rgba(10, 10, 10, 0.842);
 //   background-color: #5e94ce;
 //   border-color: #b8daff;
 // }
-```
+
+```Rsguest method(要求方法)
+Post    C 建立
+Get     R 讀取
+Put     U 更新
+Delete  D 刪除
+````

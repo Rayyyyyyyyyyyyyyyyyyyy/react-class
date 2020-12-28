@@ -14,6 +14,8 @@ import Login from './pages/Login'
 import ProductBaby from './pages/ProductBaby'
 import ProductMen from './pages/ProductMen'
 import ProductWomen from './pages/ProductWomen'
+import Member from './pages/Member'
+import MemberEdit from './pages/MemberEdit'
 
 import NotFoundPage from './pages/NotFoundPage'
 
@@ -36,13 +38,27 @@ function App() {
               <Route path="/about">
                 <About isAuth={isAuth} />
               </Route>
+
+              <Route path="/member/edit/:id?">
+                <MemberEdit type="edit" />
+              </Route>
+              <Route path="/member/new">
+                <MemberEdit type="new" />
+              </Route>
+              <Route path="/member">
+                <Member />
+              </Route>
               <Route path="/login">
                 <Login isAuth={isAuth} setIsAuth={setIsAuth} />
               </Route>
               {/* `:id?`是網址上的參數列 */}
-              <Route path="/product/baby/:id?">
+              {/* <Route path="/product/baby/:id?">
+                <ProductBaby isAuth={isAuth} />
+              </Route> */}
+              <Route path="/product/baby">
                 <ProductBaby isAuth={isAuth} />
               </Route>
+
               <Route path="/product/men">
                 <ProductMen />
               </Route>

@@ -33,6 +33,9 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/login">
               會員登入
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/member">
+              會員管理
+            </Nav.Link>
             <NavDropdown title="產品分類" id="collasible-nav-dropdown">
               <NavDropdown.Item as={NavLink} to="/product/men">
                 MEN 男性
